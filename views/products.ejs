@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/products.css">
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+
+    <span id="logo"> <i style="display: none" class="fa fa-bars" aria-hidden="true">&#xf0c9;</i><img src="images/logo1.png"> </span>
+    <div id="mainNav">
+        <ul>
+            <li class="hover-underline-animation"> <a href="">NEW</a></li>
+            <li class="hover-underline-animation"> <a href="">MEN</a></li>
+            <li class="hover-underline-animation"> <a href="">WOMEN</a></li>
+            <li class="hover-underline-animation"> <a href="">KIDS</a></li>
+            <li class="hover-underline-animation"> <a href="">SALE</a></li>
+        </ul>
+    </div>
+
+     <div id="icons">
+
+    <ul >
+        <input type="search" placeholder="Search">
+        <li><img src="images/acc.png"> </li>
+        <li><img src="images/cart.png"> </li>
+    </ul>
+     </div>
+</header>
+<!--END OF HEADER-->
+
+<!--PRODUCT-->
+<div class="products">
+    <div class="container">
+        <h1 class="lg-title">Special Shoes With Offers</h1>
+        <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quos sit consectetur,
+            ipsa voluptatem vitae necessitatibus dicta veniam, optio, possimus assumenda laudantium. Temporibus, quis
+            cum.</p>
+
+        <div class="product-items">
+            <!-- single product -->
+            <% for (let i = 0; i < products.length; i++) { %>
+                <div class="product">
+                    <div class="product-content">
+                        <div class="product-img">
+                            <img src="" alt="product image">
+                        </div>
+                        <div class="product-btns">
+                            <button type="button" class="btn-cart"> add to cart
+                                <span><i class="fas fa-plus"></i></span>
+                            </button>
+                            <button type="button" class="btn-buy"> buy now
+                                <span><i class="fas fa-shopping-cart"></i></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <div class="product-info-top">
+                            <h2 class="sm-title"><%= products[i].product_brand %></h2>
+                            <div class="rating">
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="far fa-star"></i></span>
+                            </div>
+                        </div>
+                        <a href="product-detail-card-slider-master/index.html"
+                           class="product-name"><%= products[i].product_model %></a>
+                        <p class="product-price">$ 150.00</p>
+                        <p class="product-price">$ <%= products[i].product_price %></p>
+                    </div>
+
+                    <div class="off-info">
+                        <h2 class="sm-title">25% off</h2>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer-->
+<footer class="footer">
+    <diV class="footer_section_1">
+        <div class="col-1">
+            <h3>Information</h3>
+            <ul class="col-1-list">
+                <li>Help</li>
+                <li>Track order</li>
+                <li>Delivery and returns</li>
+                <li>10% Student Discount</li>
+            </ul>
+        </div>
+        <div class="col-2">
+            <h3>Quick links</h3>
+            <ul class="col-2-list">
+                <li>About Us</li>
+                <li>Services</li>
+                <li>My orders</li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
+        <div class="col-3">
+            <h3>Categories</h3>
+            <ul class="col-2-list">
+                <li>New release</li>
+                <li> Men</li>
+                <li>Women</li>
+                <li> Kids</li>
+            </ul>
+        </div>
+        <div class="col-4">
+            <h3>The good stuff in your inbox</h3>
+            <p>News & updates from bedo Store. <br>No spam , we promise.</p>
+            <input type="text"><span style="margin-left: -90px ">SUBSCRIBE</span>
+            <div style="margin-top: 25px ;text-align: center; margin-left: -55px">
+                <img style=" margin-left:10px; display:inline; width: 8% ; height: 17%;" src="images/false-3.png">
+                <img style=" margin-left:10px; display:inline; width: 8% ; height: 17%;" src="images/Group 190.png">
+                <img style=" margin-left:10px; display:inline; width: 8% ; height: 17%;" src="images/Group 191.png">
+                <img style=" margin-left:10px ;display:inline; width: 8% ; height: 17%;" src="images/Group 192.png">
+            </div>
+        </div>
+    </diV>
+
+    <div class="footer_section_2">
+        <div class="copy-right">
+            <p>This website is made by <span style="color: white; font-weight: bolder">bedo</span> Copyright ©2021 All
+                rights reserved</p>
+        </div>
+        <div class="payment-icon">
+            <div><img src="images/payment Method.png">
+                <img src="images/payment Method-1.png">
+                <img src="images/payment Method-2.png">
+                <img src="images/payment Method-3.png">
+                <img src="images/payment Method-4.png">
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
+
