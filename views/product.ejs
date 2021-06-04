@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/product.css">
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav>
+    <input type="checkbox" id="check">
+
+    <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+    </label>
+
+    <div class="logo-container">
+        <h2 class="logo">ShoesX</h2>
+    </div>
+
+    <div class="main-nav">
+        <ul>
+            <li class="hover-underline-animation"><a href="#">New</a></li>
+            <li class="hover-underline-animation"><a href="#">Men</a></li>
+            <li class="hover-underline-animation"><a href="#">Women</a></li>
+            <li class="hover-underline-animation"><a href="#">Sale</a></li>
+        </ul>
+    </div>
+    <div id="icons">
+        <ul>
+            <input type="search" placeholder="Search">
+            <li><img src="/images/acc.png"></li>
+            <li><img src="/images/cart.png"></li>
+        </ul>
+    </div>
+
+</nav>
+<!--END OF NAV-->
+<div class="current-page">
+    <p class="categories">MEN/ MENS SHOES</p>
+    <p class="men-shoes">Men’s Shoes & Boots</p>
+</div>
+
+<div class="card-wrapper">
+    <% for (let i = 0; i < product.length; i++) { %>
+        <div class="card">
+            <!-- card left -->
+            <div class="product-imgs">
+                <div class="img-display">
+                    <div class="img-showcase">
+                        <img src="<%= product[i].product_image %>" alt="shoe image">
+                        <!--<img src = "<%= product[i].product_image %>" alt = "shoe image">
+                    <img src = "<%= product[i].product_image %>" alt = "shoe image">
+                    <img src = "<%= product[i].product_image %>" alt = "shoe image">-->
+                    </div>
+                </div>
+                <div class="img-select">
+                    <div class="img-item">
+                        <a href="#" data-id="1">
+                            <img src="<%= product[i].product_image %>" alt="shoe image">
+                        </a>
+                    </div>
+                    <div class="img-item">
+                        <a href="#" data-id="2">
+                            <img src="<%= product[i].product_image %>" alt="shoe image">
+                        </a>
+                    </div>
+                    <div class="img-item">
+                        <a href="#" data-id="3">
+                            <img src="<%= product[i].product_image %>" alt="shoe image">
+                        </a>
+                    </div>
+                    <div class="img-item">
+                        <a href="#" data-id="4">
+                            <img src="<%= product[i].product_image %>" alt="shoe image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- card right -->
+
+            <div class="product-content">
+                <h2 class="product-title"><%= product[i].product_brand %></h2>
+                <p href="#" class="product-model"><%= product[i].product_model %></p>
+                <div class="product-rating">
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star-half-alt"></i></span>
+                    <span>4.7(21)</span>
+                </div>
+
+                <div class="product-price">
+                    <p class="last-price">Old Price: <span>$<%= product[i].product_old_price %></span></p>
+
+                    <p class="new-price">New Price:<span>$<%= product[i].product_price %></span></p>
+                </div>
+
+                <div class="product-detail">
+                    <ul class="select-options">
+                        <li>
+                            <label for="size">Size</label>
+                            <select class="custom-select" id="size">
+                                <option selected>Choose Options</option>
+                                <option>EU 35</option>
+                                <option>EU 36</option>
+                                <option>EU 37</option>
+                                <option>EU 38</option>
+                                <option>EU 39</option>
+                                <option>EU 41</option>
+                                <option>EU 42</option>
+                                <option>EU 43</option>
+                                <option>EU 44</option>
+                            </select>
+                        </li>
+
+                        <li>
+                            <label for="color">Colour</label>
+                            <select class="custom-select" id="color">
+                                <option selected>Choose Options</option>
+                                <option>Black&White</option>
+                                <option>Red&Green</option>
+                                <option>Yellow&Black</option>
+
+                            </select>
+                        </li>
+
+                    </ul>
+                    <ul class="select-option-2">
+                        <li>
+                            <label for="width">Width</label>
+                            <select class="custom-select" id="width">
+                                <option selected>Choose Options</option>
+                                <option>B-Narrow</option>
+                                <option>D-Medium</option>
+                                <option>2E-Wide</option>
+                                <option>4E-Extra wide</option>
+                            </select>
+                        </li>
+
+                    </ul>
+
+
+                </div>
+
+                <div class="purchase-info">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" min="0" value="1">
+                    <button type="button" class="btn">
+                        Add to Cart <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+                <div>
+                    <h2>About this item: </h2>
+                    <p><%= product[i].product_description %></p>
+                </div>
+            </div>
+        </div>
+    <% } %>
+</div>
+
+
+<!-- Footer-->
+<footer class="footer">
+    <diV class="footer_section_1">
+        <div class="col-1">
+            <h3>Information</h3>
+            <ul class="col-1-list">
+                <li>Help</li>
+                <li>Track order</li>
+                <li>Delivery and returns</li>
+                <li>10% Student Discount</li>
+            </ul>
+        </div>
+
+        <div class="col-2">
+            <h3>Quick links</h3>
+            <ul class="col-2-list">
+                <li>About Us</li>
+                <li>Services</li>
+                <li>My orders</li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
+
+        <div class="col-3">
+            <h3>Categories</h3>
+            <ul class="col-2-list">
+                <li>New release</li>
+                <li> Men</li>
+                <li>Women</li>
+                <li> Kids</li>
+            </ul>
+        </div>
+        <div class="col-4">
+            <h3>The good stuff in your inbox</h3>
+            <p>News & updates from bedo Store. <br>No spam , we promise.</p>
+            <div class="newsletter">
+                <input class="email" type="text">
+                <input class="SUBSCRIBE" type="submit" value="SUBSCRIBE">
+            </div>
+            <div class="social-links">
+                <a href="">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer_section_2">
+        <div class="copy-right">
+            <p>This website is made by <span style="color: white; font-weight: bolder">bedo</span> Copyright ©2021 All
+                rights reserved</p>
+        </div>
+        <div class="payment-icon">
+            <div><img src="/images/payment Method.png">
+                <img src="/images/payment Method-1.png">
+                <img src="/images/payment Method-2.png">
+                <img src="/images/payment Method-3.png">
+                <img src="/images/payment Method-4.png">
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
+

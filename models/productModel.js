@@ -8,16 +8,19 @@ function getProducts(cb){
     });
 }
 
-function getProduct (id) {
-    let product = products.find(element => element.id === parseInt(id))
-    if(product !== undefined){
-        return product;
+function getProduct (cb,id) {
+    let sql = "SELECT * FROM products WHERE id= " + parseInt(id);//parse to change id from string to integer
+    db.query( sql, function (err, product, fields) {
+        if(err){
 
-    }else{
-        return 'Error 404: This user could not be found.'
-    }
+            cb(err)
+        }
+        console.log(product)
+        cb(null,product)
+    });
 
 }
+
 
 
 

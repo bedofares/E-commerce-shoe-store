@@ -3,6 +3,10 @@ const express = require('express')
 const router = express.Router()
 
 
+router.get('/',(req,res)=>{
+    // Read cookies
+    res.send('Hallo world');
+})
 
 router.get('/cookies',(req,res)=>{
     // Read cookies

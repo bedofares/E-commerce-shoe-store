@@ -15,11 +15,19 @@ function getProducts (req, res, next) {
 }
 
 function getProduct (req, res, next) {
-    const product = productModel.getProduct(req.params.id);
-    //res.json(product);
-    res.render('users',{product})
+    productModel.getProduct((err, product) => {
+        if (err) {
+            //res.sendStatus(500) //this is just for error handling
+            res.status(404)
+            next(err)
+        }
+        res.render('product' , {product});
+    },req.params.id);
 
 }
+
+
+
 
 
 
