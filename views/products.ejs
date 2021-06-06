@@ -7,10 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/product.css">
     <link rel="stylesheet" type="text/css" href="/products.css">
     <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+<!--HEADER START-->
 <nav>
     <input type="checkbox" id="check">
 
@@ -27,6 +30,7 @@
             <li class="hover-underline-animation"><a href="#">New</a></li>
             <li class="hover-underline-animation"><a href="#">Men</a></li>
             <li class="hover-underline-animation"><a href="#">Women</a></li>
+            <li class="hover-underline-animation"><a href="#">Kids</a></li>
             <li class="hover-underline-animation"><a href="#">Sale</a></li>
         </ul>
     </div>
@@ -53,9 +57,7 @@
             <!-- single product -->
             <% for (let i = 0; i < products.length; i++) { %>
 
-
                 <div class="product">
-
                     <div class="product-content">
                         <div class="product-img">
                             <a href="/products/<%= products[i].id %>" >
@@ -83,9 +85,10 @@
                                 <span><i class="far fa-star"></i></span>
                             </div>
                         </div>
+
                         <a href="/products/<%= products[i].id %>" class="product-name"><%= products[i].product_model %></a>
-                        <p class="product-price">$<%= products[i].product_old_price%></p>
-                        <p class="product-price">$ <%= products[i].product_price %></p>
+                        <p class="product-price-1">$<%= products[i].product_old_price%></p>
+                        <p class="product-price-1">$ <%= products[i].product_price %></p>
                     </div>
 
                     <div class="off-info">

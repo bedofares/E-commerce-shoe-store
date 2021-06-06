@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/product.css">
     <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 <nav>
@@ -19,7 +20,7 @@
     </label>
 
     <div class="logo-container">
-        <h2 class="logo">ShoesX</h2>
+        <h2 class="logo" onclick=" returnHome()" >ShoesX</h2>
     </div>
 
     <div class="main-nav">
@@ -27,9 +28,11 @@
             <li class="hover-underline-animation"><a href="#">New</a></li>
             <li class="hover-underline-animation"><a href="#">Men</a></li>
             <li class="hover-underline-animation"><a href="#">Women</a></li>
+            <li class="hover-underline-animation"><a href="#">Kids</a></li>
             <li class="hover-underline-animation"><a href="#">Sale</a></li>
         </ul>
     </div>
+   <!-- <div class="u-black u-menu-overlay u-opacity u-opacity-70" style="display: block;"></div>-->
     <div id="icons">
         <ul>
             <input type="search" placeholder="Search">
@@ -47,44 +50,33 @@
 
 <div class="card-wrapper">
     <% for (let i = 0; i < product.length; i++) { %>
+
         <div class="card">
             <!-- card left -->
             <div class="product-imgs">
                 <div class="img-display">
                     <div class="img-showcase">
-                        <img src="<%= product[i].product_image %>" alt="shoe image">
-                        <!--<img src = "<%= product[i].product_image %>" alt = "shoe image">
-                    <img src = "<%= product[i].product_image %>" alt = "shoe image">
-                    <img src = "<%= product[i].product_image %>" alt = "shoe image">-->
+                        <img id="featured" src="<%= product[i].product_image %>" alt="shoe image">
                     </div>
                 </div>
                 <div class="img-select">
                     <div class="img-item">
-                        <a href="#" data-id="1">
-                            <img src="<%= product[i].product_image %>" alt="shoe image">
-                        </a>
+                            <img class="thumbnail active"src="<%= product[i].product_image_1 %>" alt="shoe image">
                     </div>
                     <div class="img-item">
-                        <a href="#" data-id="2">
-                            <img src="<%= product[i].product_image %>" alt="shoe image">
-                        </a>
+                            <img class="thumbnail" src="<%= product[i].product_image_2 %>" alt="shoe image">
                     </div>
                     <div class="img-item">
-                        <a href="#" data-id="3">
-                            <img src="<%= product[i].product_image %>" alt="shoe image">
-                        </a>
+                            <img class="thumbnail" src="<%= product[i].product_image_3 %>" alt="shoe image">
                     </div>
                     <div class="img-item">
-                        <a href="#" data-id="4">
-                            <img src="<%= product[i].product_image %>" alt="shoe image">
-                        </a>
+                            <img class="thumbnail" src="<%=  product[i].product_image %>" alt="shoe image">
                     </div>
                 </div>
             </div>
 
-
+            <form method="post" action="/products/s/addtocartss" >
             <!-- card right -->
-
             <div class="product-content">
                 <h2 class="product-title"><%= product[i].product_brand %></h2>
                 <p href="#" class="product-model"><%= product[i].product_model %></p>
@@ -107,27 +99,21 @@
                     <ul class="select-options">
                         <li>
                             <label for="size">Size</label>
-                            <select class="custom-select" id="size">
+                            <select name="product_sizee"  class="custom-select" id="size">
                                 <option selected>Choose Options</option>
-                                <option>EU 35</option>
-                                <option>EU 36</option>
-                                <option>EU 37</option>
-                                <option>EU 38</option>
-                                <option>EU 39</option>
-                                <option>EU 41</option>
-                                <option>EU 42</option>
-                                <option>EU 43</option>
-                                <option>EU 44</option>
+                                <option><%= product[i].product_size_1 %></option>
+                                <option><%= product[i].product_size_2 %></option>
+                                <option><%= product[i].product_size_3 %></option>
                             </select>
                         </li>
 
                         <li>
                             <label for="color">Colour</label>
-                            <select class="custom-select" id="color">
+                            <select  class="custom-select" id="color">
                                 <option selected>Choose Options</option>
-                                <option>Black&White</option>
-                                <option>Red&Green</option>
-                                <option>Yellow&Black</option>
+                                <option><%= product[i].product_color_1 %></option>
+                                <option><%= product[i].product_color_2 %></option>
+                                <option><%= product[i].product_color_3 %></option>
 
                             </select>
                         </li>
@@ -136,12 +122,11 @@
                     <ul class="select-option-2">
                         <li>
                             <label for="width">Width</label>
-                            <select class="custom-select" id="width">
+                            <select   class="custom-select" id="width">
                                 <option selected>Choose Options</option>
-                                <option>B-Narrow</option>
-                                <option>D-Medium</option>
-                                <option>2E-Wide</option>
-                                <option>4E-Extra wide</option>
+                                <option><%= product[i].product_width_1 %></option>
+                                <option><%= product[i].product_width_2 %></option>
+                                <option><%= product[i].product_width_3%></option>
                             </select>
                         </li>
 
@@ -152,17 +137,19 @@
 
                 <div class="purchase-info">
                     <label for="quantity">Quantity</label>
-                    <input type="number" min="0" value="1">
-                    <button type="button" class="btn">
+                    <input  type="number" min="0" value="1">
+                    <button type="submit" class="btn">
                         Add to Cart <i class="fas fa-shopping-cart"></i>
                     </button>
                 </div>
-                <div>
+                <div class="about-item">
                     <h2>About this item: </h2>
                     <p><%= product[i].product_description %></p>
                 </div>
             </div>
+            </form>
         </div>
+
     <% } %>
 </div>
 
@@ -241,6 +228,30 @@
     </div>
 </footer>
 
+<script type="text/javascript">
+    function returnHome(){
+        window.location.replace("/products")
+    }
+    let thumbnails = document.getElementsByClassName('thumbnail')
+
+    let activeImages = document.getElementsByClassName('active')
+
+    for (var i=0; i < thumbnails.length; i++){
+
+        thumbnails[i].addEventListener('click', function(){
+            console.log(activeImages)
+
+            if (activeImages.length > 0){
+                activeImages[0].classList.remove('active')
+            }
+
+
+            this.classList.add('active')
+            document.getElementById('featured').src = this.src
+        })
+    }
+
+</script>
 </body>
 </html>
 

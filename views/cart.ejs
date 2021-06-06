@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/product.css">
+
+    <link rel="stylesheet" type="text/css" href="/cart.css">
+
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<!--HEADER START-->
+<nav>
+    <input type="checkbox" id="check">
+
+    <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+    </label>
+
+    <div class="logo-container">
+        <h2 class="logo" onclick="returnHome()">ShoesX</h2>
+    </div>
+
+    <div class="main-nav">
+        <ul>
+            <li class="hover-underline-animation"><a href="#">New</a></li>
+            <li class="hover-underline-animation"><a href="#">Men</a></li>
+            <li class="hover-underline-animation"><a href="#">Women</a></li>
+            <li class="hover-underline-animation"><a href="#">Kids</a></li>
+            <li class="hover-underline-animation"><a href="#">Sale</a></li>
+        </ul>
+    </div>
+    <div id="icons">
+        <ul>
+            <input type="search" placeholder="Search">
+            <li><img src="/images/acc.png"></li>
+            <li><img src="/images/cart.png"></li>
+        </ul>
+    </div>
+
+</nav>
+<!--END OF HEADER-->
+<div class="current-page-1">
+    <p class="shop-cart">Shopping Cart</p>
+</div>
+
+<div class="card-wrapper-1">
+    <div class="card-1">
+
+        <!-- card left -->
+        <div class="details-left">
+            <div class="cart-item-head">
+                <div class="cart-top-head">
+                    <div class="product-head"> 1 ITEM</div>
+                    <div class="product-details">
+                    </div>
+                    <div class="product-amount-head">
+                        <p>Price</p>
+                    </div>
+                    <div class="product-quantity-head">
+                        <p>Quantity</p>
+                    </div>
+                    <div class="product-total-head">
+                        <p>Total</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="cart-item">
+                <div class="cart-top">
+                <div class="product-image"><img src="/images/shoe00.png" alt="product image"></div>
+                <div class="product-details">
+                    <p class="product-item-1"> VANS</p>
+                    <p class="product-item-1">YACHT CLUB OLD SKOOL SHOES</p>
+                    <p class="product-item-1"> Color: Blue green</p>
+                    <p class="product-item-1"> Size: 8.5</p>
+                    <p class="product-item-1"> Width: D</p>
+                </div>
+
+                <div class="product-amount">
+                    <p>$ 133.00</p>
+                </div>
+                <div class="product-quantity">
+                    <p>2</p>
+                </div>
+                <div class="product-total">
+                    <p>$ 269</p>
+                </div>
+
+                </div>
+                <div class="cart-bottom">
+                    <ul class="action-options">
+                        <li>DELETE</li>
+                    </ul></div>
+            </div>
+
+            <div class="cart-item">
+                <div class="cart-top">
+                    <div class="product-image"><img src="/images/shoe00.png" alt="product image"></div>
+                    <div class="product-details">
+                        <p class="product-item-1"> VANS</p>
+                        <p class="product-item-1">YACHT CLUB OLD SKOOL SHOES</p>
+                        <p class="product-item-1"> Color: Blue green</p>
+                        <p class="product-item-1"> Size: 8.5</p>
+                        <p class="product-item-1"> Width: D</p>
+                    </div>
+
+                    <div class="product-amount">
+                        <p>$ 133.00</p>
+                    </div>
+                    <div class="product-quantity">
+                        <p>2</p>
+                    </div>
+                    <div class="product-total">
+                        <p>$ 269</p>
+                    </div>
+
+                </div>
+                <div class="cart-bottom">
+                    <ul class="action-options">
+                        <li>DELETE</li>
+                    </ul></div>
+            </div>
+
+            <div class="cart-item">
+                <div class="cart-top">
+                    <div class="product-image"><img src="/images/shoe00.png" alt="product image"></div>
+                    <div class="product-details">
+                        <p class="product-item-1"> VANS</p>
+                        <p class="product-item-1">YACHT CLUB OLD SKOOL SHOES</p>
+                        <p class="product-item-1"> Color: Blue green</p>
+                        <p class="product-item-1"> Size: 8.5</p>
+                        <p class="product-item-1"> Width: D</p>
+                    </div>
+
+                    <div class="product-amount">
+                        <p>$ 133.00</p>
+                    </div>
+                    <div class="product-quantity">
+                        <p>2</p>
+                    </div>
+                    <div class="product-total">
+                        <p>$ 269</p>
+                    </div>
+
+                </div>
+                <div class="cart-bottom">
+                    <ul class="action-options">
+                        <li>DELETE</li>
+                    </ul></div>
+            </div>
+
+        </div>
+
+        <!-- card right -->
+        <div class="cart-right">
+
+            <div class="cart-right-content">
+            <div class="discount-card">
+                <label class="discount-label" for="discount-code">ENTER VOUCHER CODE</label>
+                <input id="discount-code" type="text" placeholder="Discount code">
+            </div>
+
+            <div class="returns-card">
+                <p class="free-ship"><i class="fa fa-truck" aria-hidden="true"></i>
+                    Free Shipping over $125</p>
+                <p class="returns"><i class="fa fa-undo" aria-hidden="true"></i>100 days free returns</p>
+            </div>
+
+            <div class="delivery-card">
+                <select class="ship-method">
+                    <option selected>Standard</option>
+                    <option>Express</option>
+                </select>
+            </div>
+
+            <div class="estimated-total-card">
+                <p><span class="md-text">Subtotal</span> <span class="sm-text">$226.00</span></p>
+                <p><span class="md-text">Shipping</span> <span class="sm-text">$7.99</span></p>
+                <p><span class="md-text">Shipping Discount </span><span class="sm-text"> - $7.99</span></p>
+                <p class="estimated-total-child"><span class="lg-text">ESTIMATED TOTAL   </span><span class="sm-text-1"> $226.00</span>
+                </p>
+               <p><button class="check-out">CHECK OUT</button></p>
+            </div>
+
+        </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Footer-->
+<footer class="footer">
+    <diV class="footer_section_1">
+        <div class="col-1">
+            <h3>Information</h3>
+            <ul class="col-1-list">
+                <li>Help</li>
+                <li>Track order</li>
+                <li>Delivery and returns</li>
+                <li>10% Student Discount</li>
+            </ul>
+        </div>
+
+        <div class="col-2">
+            <h3>Quick links</h3>
+            <ul class="col-2-list">
+                <li>About Us</li>
+                <li>Services</li>
+                <li>My orders</li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
+
+        <div class="col-3">
+            <h3>Categories</h3>
+            <ul class="col-2-list">
+                <li>New release</li>
+                <li> Men</li>
+                <li>Women</li>
+                <li> Kids</li>
+            </ul>
+        </div>
+        <div class="col-4">
+            <h3>The good stuff in your inbox</h3>
+            <p>News & updates from bedo Store. <br>No spam , we promise.</p>
+            <div class="newsletter">
+                <input class="email" type="text">
+                <input class="SUBSCRIBE" type="submit" value="SUBSCRIBE">
+            </div>
+            <div class="social-links">
+                <a href="">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+
+            </div>
+        </div>
+    </div>
+    <div class="footer_section_2">
+        <div class="copy-right">
+            <p>This website is made by <span style="color: white; font-weight: bolder">bedo</span> Copyright ©2021 All
+                rights reserved</p>
+        </div>
+        <div class="payment-icon">
+            <div><img src="/images/payment Method.png">
+                <img src="/images/payment Method-1.png">
+                <img src="/images/payment Method-2.png">
+                <img src="/images/payment Method-3.png">
+                <img src="/images/payment Method-4.png">
+            </div>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript">
+    function returnHome(){
+        window.location.replace("/products")
+    }
+</script>
+</body>
+</html>
+

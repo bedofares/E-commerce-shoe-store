@@ -28,6 +28,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 //serve static files from /public
 app.use(express.static(__dirname + '/public'));
 
+
 //import the routers in the app.js
 const indexRouter = require('./routes/index')
 const productsRouter = require('./routes/products')

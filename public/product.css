@@ -40,7 +40,7 @@ h2.logo {
     font-weight: bold;
     margin-top: 1rem;
     margin-left: 2rem;
-
+    cursor: pointer;
 }
 
 .main-nav {
@@ -77,6 +77,7 @@ h2.logo {
     transform-origin: bottom right;
     transition: transform 0.30s ease-out;
 }
+
 .hover-underline-animation:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
@@ -98,15 +99,13 @@ h2.logo {
 }
 
 #icons ul {
-    width: 100%;
+    position: absolute;
+    right: 40px;
     margin-top: 0.8rem;
     display: flex;
     list-style: none;
     flex-direction: row;
-    /*text-align: center;
-   align-items: center;*/
     justify-content: center;
-    padding-left: 110px;
 }
 
 /*SEARCH BAR*/
@@ -176,9 +175,7 @@ input::-webkit-search-cancel-button {
     max-width: 1100px;
     margin: 0 auto;
     margin-top: 1.3rem;
-
 }
-
 .categories {
     font-weight: normal;
     font-size: 1rem;
@@ -227,21 +224,17 @@ img {
     height: 320px;
 }
 
-.img-select {
-    display: flex;
 
+.img-select {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: 0.1rem;
 }
 
 .img-item {
     border: 1px solid #878585;
     box-sizing: border-box;
     margin: 0.3rem;
-}
-
-.img-item:nth-child(1),
-.img-item:nth-child(2),
-.img-item:nth-child(3) {
-    margin-right: 0;
 }
 
 .img-item:hover {
@@ -285,7 +278,7 @@ img {
 
 .product-rating span {
     font-weight: 600;
-    color: #252525;
+    color: var(--carribean-green);
 }
 
 .product-price {
@@ -316,12 +309,12 @@ img {
     border-top: 3px solid #E3E3E3;
 }
 
-/*.product-detail h2{
-    text-transform: capitalize;
-    color: #12263a;
+.about-item h2{
+    text-transform: uppercase;
+    color: #000000;
     padding-bottom: 0.6rem;
-}*/
-/*.product-detail p{
+}
+/*.about-item p{
     font-size: 0.9rem;
     padding: 0.3rem;
     opacity: 0.8;
@@ -348,7 +341,6 @@ img {
 
 .product-detail ul li {
     list-style: none;
-    /*background: url(shoes_images/checked.png) left center no-repeat;*/
     background-size: 18px;
     margin: 0.4rem 0;
     margin-right: 1rem;
@@ -399,6 +391,7 @@ img {
 .purchase-info label {
     font-weight: 600;
 }
+
 .purchase-info .btn {
     cursor: pointer;
     color: #fff;
@@ -429,6 +422,7 @@ img {
     color: white;
     padding-top: 35px;
     margin-top: 10%;
+    margin-bottom: 0px;
 }
 
 .footer_section_1 {
@@ -436,12 +430,12 @@ img {
     grid-template-columns: repeat(4, 22% 22% 22% 34%);
 }
 
-.col-1,
+/*.col-1,
 .col-2,
-.col-3, .col-4 {
-    /*border: 1px solid red;*/
-}
-
+.col-3,
+.col-4 {
+    /*border: 1px solid red;
+}*/
 .col-1 h3,
 .col-2 h3,
 .col-3 h3 {
@@ -450,7 +444,6 @@ img {
     margin-left: 15%;
     width: 40% !important;
 }
-
 .col-1 h3:after,
 .col-2 h3:after,
 .col-3 h3:after {
@@ -460,32 +453,26 @@ img {
     padding-top: 10px; /* This creates some space between the element and the border. */
     border-bottom: 2px solid #7F7E7F; /* This creates the border. Replace black with whatever color you want. */
 }
-
 .col-1 h3 {
     margin-left: 20%;
 }
-
 .col-2 h3 {
     margin-left: 20%;
 }
-
 .col-3 h3 {
     /*width: 80px;*/
 }
-
 .col-4 h3 {
     font-size: 1.3rem;
     margin-bottom: 10px;
     margin-left: 10%;
 }
-
 .col-4 p {
     font-size: 1.2rem;
     color: #767780;
     margin-left: 10%;
     margin-bottom: 1.4rem;
 }
-
 .newsletter {
     padding: 0.5rem;
     width: 100%;
@@ -496,7 +483,7 @@ img {
     outline: none;
     background: none;
     border: none;
-    width: 60%;
+    width: 70%;
     color: white;
     font-size: 1rem;
     border-bottom: 2px solid #3FC9A2;
@@ -508,17 +495,22 @@ img {
 }
 
 .SUBSCRIBE {
-    display: inline;
+    display: block;
     outline: none;
     background: none;
     color: white;
     border: none;
     font-size: 1rem;
-    margin-left: 0;
+    background: #3FC9A2;
+    padding: 0.5rem;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top:0.8rem ;
 }
 
 .SUBSCRIBE:hover {
-    color: #3FC9A2;
+    color: black;
+    background: white;
     cursor: pointer;
 }
 
@@ -591,7 +583,8 @@ img {
 }
 
 .copy-right {
-    flex-grow: 1;
+   /* flex-grow: 1;*/
+    width: 60%;
     justify-content: space-between;
 }
 
@@ -606,20 +599,21 @@ img {
 }
 
 .payment-icon {
-    flex-grow: 1;
+    width: 60%;
 }
 
 .payment-icon div {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: end;
+    margin-left: auto;
+    margin-right: 40px;
+    width: 60%;
 }
 
 .payment-icon img {
-    position: relative;
-    width: 10%;
-    height: 85%;
+    width: 50px;
+    height: 50px;
 }
 
 @media screen and (min-width: 992px) {
@@ -644,301 +638,197 @@ img {
 
 }
 
-/* If the screen width is less than or equal 576px apply css defined in this block*/
-/*Ipad screen*/
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
     .card-wrapper {
         width: 90%;
     }
-
     .current-page {
         width: 90%;
-
     }
-
-    .col-2 h3 {
-        width: 60% !important;
-
+    .main-nav ul {
+        padding-left: 80px;
     }
-
-    #icons ul {
-        padding-left: 0px;
+    .main-nav ul li {
+        margin-right: 1rem;
     }
-
-
 }
 
 /* If the screen width is less than or equal 576px apply css defined in this block*/
 /*Ipad screen*/
-@media screen and (max-width: 768px) {
-    .checkbtn {
-        display: block;
+@media screen and (max-width: 1024px) {
+    .hover-underline-animation {
+        margin-right: 1.5rem;
+    }
+    .col-2 h3 {
+        width: 60% !important;
+    }
+    #icons ul {
+        padding-left: 0px;
     }
 
+    #icons input:focus {
+        width: 90px;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .checkbtn {
+        display: block;
+        font-size: 2rem;
+        margin-top: 0rem;
+    }
     h2.logo {
         color: black !important;
         font-size: 30px;
         font-weight: bold;
-        margin-top: 1.3rem;
+        margin-top: 1rem;
         margin-left: 0;
-
     }
-
     .product-title {
         position: initial;
-
     }
-
     .main-nav {
         width: 20%;
     }
-
     #icons {
         width: 52%;
     }
-
     #icons ul {
-        padding-left: 120px;
+        right: 20px;
     }
-
     #icons img {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
     }
-
+    #icons input:focus {
+        width: 130px;
+    }
     .main-nav ul {
         position: fixed;
         width: 100%;
         height: 100vh;
         background: #f8f9fa;
-        top: 80px;
+        top: 72px;
         left: -100%;
         text-align: center;
         transition: all .5s;
         padding-left: 0px;
     }
-
     .hover-underline-animation {
         display: block;
         margin: 50px 0;
         line-height: 30px;
         border-bottom: 2px solid #e7e7e7;
-
     }
-
     .main-nav .hover-underline-animation a {
         font-size: 1.5rem;
         color: black;
         font-weight: bolder;
     }
-
     .hover-underline-animation:after {
         display: none;
     }
 
-
     .hover-underline-animation:hover:after {
         display: none;
     }
-
     #check:checked ~ .main-nav ul {
         left: 0;
     }
-
-    .card-wrapper {
-        width: 90%;
-        margin: 0 auto;
-        margin-top: 30px;
+}
+/* If the screen width is less than or equal 576px apply css defined in this block*/
+/*Ipad screen*/
+@media screen and (max-width: 768px) {
+    h2.logo {
+        font-size: 30px;
+        margin-top: 1rem;
     }
-
-    .current-page {
-        width: 90%;
-
-    }
-
     .col-1 h3,
     .col-2 h3,
     .col-3 h3,
     .col-4 h3 {
         font-size: 1.2rem;
     }
-
     .col-2 h3 {
         width: 70% !important;
-
     }
-
     .col-4 p {
         font-size: 1.1rem;
     }
-
     .col-4 .email {
         width: 80%;
-
     }
-
     .SUBSCRIBE {
         font-size: 0.8rem;
         margin-left: 10%;
     }
-
     .social-links a {
         width: 30px;
         height: 30px;
         font-size: 1rem;
     }
-
-}
-
-/* If the screen width is less than or equal 576px apply css defined in this block*/
-/*Mobile screen*/
-@media screen and (max-width: 576px) {
-    .checkbtn {
-        display: block;
-        font-size: 1.5rem;
-        padding-top: 1.2rem;
-        padding-right: 1rem;
-        padding-left: 1rem
-    }
-
-    .product-title {
-        position: initial;
-
-    }
-
-
-    h2.logo {
-        color: black !important;
-        font-size: 20px;
-        font-weight: bold;
-        margin-top: 1.3rem;
-        margin-left: 0;
-    }
-
-    .main-nav {
-        width: 0%;
-    }
-
-    #icons {
-        width: 52%;
-    }
-
-    #icons input {
-        font-size: 1rem;
-        border: solid 1px #ccc;
-        padding: 3px 8px 5px 32px;
-        width: 50px;
-    }
-
-    #icons input:focus {
-        width: 80px;
-    }
-
-    #icons ul {
-        /*margin-left: 20px;*/
-        padding-left: 65px;
-    }
-
-    #icons img {
-        width: 28px;
-        height: 28px;
-    }
-
-    .main-nav ul {
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: #f8f9fa;
-        top: 80px;
-        left: -100%;
-        transition: all .5s;
-        padding-left: 0px;
-    }
-
-    .hover-underline-animation {
-        display: block;
-        /* line-height: 30px;*/
-        width: 100%;
-        border-bottom: 2px solid #e7e7e7;
-    }
-
-    .main-nav .hover-underline-animation a {
-        font-size: 1.2rem;
-        color: black;
-        margin: 0 auto;
-        font-weight: bold;
-    }
-
-    .hover-underline-animation:after {
-        display: none;
-    }
-
-
-    .hover-underline-animation:hover:after {
-        display: none;
-    }
-
-    #check:checked ~ .main-nav ul {
-        left: 0;
-    }
-
-    .select-options {
-        display: block;
-    }
-
     .footer_section_1 {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
-
-    .col-1, .col-2, .col-3, .col-4 {
+    .col-1, .col-2, .col-3{
         text-align: center;
         margin-top: 1rem;
     }
-
+    .col-4 {
+        text-align: center;
+        margin-top: 3rem;
+        grid-column: 1 / span 3;
+        grid-row: 3;
+    }
     .col-1 ul li,
     .col-2 ul li,
     .col-3 ul li,
     .col-4 ul li {
         margin-left: 0;
     }
-
     .col-1 h3,
     .col-2 h3,
     .col-3 h3,
     .col-4 h3 {
         margin: 0 auto;
-        /* width: 100%;*/
     }
-
     .col-1 h3:after,
     .col-2 h3:after,
     .col-3 h3:after {
         margin: 0 auto;
         width: 50%;
     }
-
+    .col-4 h3{
+        /*font-size: 1.8rem;*/
+    }
     .col-4 p {
         margin: 0 auto;
         margin-top: 0.5rem;
     }
-
+    .col-4 .email {
+        width: 40%;
+        margin-left: 0;
+    }
     .footer_section_2 {
         flex-direction: column;
         text-align: center;
     }
-
+    .copy-right  {
+      width: 100%;
+    }
+    .payment-icon{
+        width: 100%;
+    }
+    .payment-icon div {
+        margin: 0 auto;
+    }
     .copy-right p {
         margin: 0 auto;
         margin-bottom: 0.5rem;
         font-size: 1rem;
     }
-
-    .payment-icon img {
-        width: 15%;
-        height: 55%;
-    }
-
     .SUBSCRIBE {
+        display: block;
         margin: 0 auto;
         background: #3FC9A2;
         color: white;
@@ -948,13 +838,94 @@ img {
         border-radius: 20px;
         margin-top: 1rem;
     }
-
     .SUBSCRIBE:hover {
         color: black;
         background: white;
         cursor: pointer;
     }
 
+}
+
+/* If the screen width is less than or equal 576px apply css defined in this block*/
+/*Mobile screen*/
+@media screen and (max-width: 576px) {
+    .checkbtn {
+        font-size: 1.8rem;
+        margin-top: 0.3rem;
+    }
+    h2.logo {
+        color: black !important;
+        font-size: 25px;
+        font-weight: bold;
+        margin-top: 1.4rem;
+        margin-left: 0;
+    }
+    #icons input:focus {
+        width: 80px;
+    }
+    #icons ul {
+        right: 20px;
+        margin-top: 1rem;
+    }
+    #icons img {
+        width: 28px;
+        height: 28px;
+    }
+    .select-options {
+        display: block;
+    }
+    .footer_section_1 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .col-1, .col-2, .col-3, .col-4 {
+        text-align: center;
+        margin-top: 1rem;
+    }
+    .col-4 {
+        text-align: center;
+        margin-top: 1rem;
+        grid-column: initial;
+        grid-row: initial;
+    }
+    .col-1 ul li,
+    .col-2 ul li,
+    .col-3 ul li,
+    .col-4 ul li {
+        margin-left: 0;
+    }
+    .col-1 h3,
+    .col-2 h3,
+    .col-3 h3,
+    .col-4 h3 {
+        margin: 0 auto;
+    }
+    .col-1 h3:after,
+    .col-2 h3:after,
+    .col-3 h3:after {
+        margin: 0 auto;
+        width: 50%;
+    }
+    .col-4 p {
+        margin: 0 auto;
+        margin-top: 0.5rem;
+    }
+    .footer_section_2 {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .copy-right p {
+        width: 80%;
+    }
+    .SUBSCRIBE {
+        font-size: 0.8rem;
+        margin-top: 1rem;
+    }
+    .SUBSCRIBE:hover {
+        color: black;
+        background: white;
+        cursor: pointer;
+    }
 }
 
 
