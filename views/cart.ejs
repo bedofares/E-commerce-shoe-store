@@ -8,9 +8,7 @@
     <title>Home</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/product.css">
-
     <link rel="stylesheet" type="text/css" href="/cart.css">
-
     <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -71,92 +69,45 @@
 
                 </div>
             </div>
+            <% for (let i = 0; i < product.length; i++) { %>
 
             <div class="cart-item">
                 <div class="cart-top">
-                <div class="product-image"><img src="/images/shoe00.png" alt="product image"></div>
+                <div class="product-image"><img src="<%= product[i].product_image %>" alt="product image"></div>
                 <div class="product-details">
-                    <p class="product-item-1"> VANS</p>
-                    <p class="product-item-1">YACHT CLUB OLD SKOOL SHOES</p>
-                    <p class="product-item-1"> Color: Blue green</p>
-                    <p class="product-item-1"> Size: 8.5</p>
-                    <p class="product-item-1"> Width: D</p>
+                    <p class="product-item-1"><%= product[i].product_brand %> </p>
+                    <p class="product-item-1"><%= product[i].product_model %></p>
+                    <p class="product-item-1"> Color: <%= product[i].product_color %></p>
+                    <p class="product-item-1"> Size: <%= product[i].product_size %></p>
+                    <p class="product-item-1"> Width: <%= product[i].product_width %></p>
                 </div>
 
                 <div class="product-amount">
-                    <p>$ 133.00</p>
+                    <p>$ <%= product[i].product_price %></p>
                 </div>
                 <div class="product-quantity">
-                    <p>2</p>
+                    <p><%= product[i].product_quantity %></p>
                 </div>
                 <div class="product-total">
-                    <p>$ 269</p>
+                    <p>$ <%= product[i].product_price * product[i].product_quantity  %>  </p>
                 </div>
 
                 </div>
                 <div class="cart-bottom">
+                    <form method="post" action="/products/<%= product[i].id %>/delete">
                     <ul class="action-options">
-                        <li>DELETE</li>
-                    </ul></div>
-            </div>
-
-            <div class="cart-item">
-                <div class="cart-top">
-                    <div class="product-image"><img src="/images/shoe00.png" alt="product image"></div>
-                    <div class="product-details">
-                        <p class="product-item-1"> VANS</p>
-                        <p class="product-item-1">YACHT CLUB OLD SKOOL SHOES</p>
-                        <p class="product-item-1"> Color: Blue green</p>
-                        <p class="product-item-1"> Size: 8.5</p>
-                        <p class="product-item-1"> Width: D</p>
-                    </div>
-
-                    <div class="product-amount">
-                        <p>$ 133.00</p>
-                    </div>
-                    <div class="product-quantity">
-                        <p>2</p>
-                    </div>
-                    <div class="product-total">
-                        <p>$ 269</p>
-                    </div>
-
+                        <li><input onclick="return confirm('Are you sure to delete?')"class="delete" type="submit" value="delete"></li>
+                    </ul>
+                    </form>
                 </div>
-                <div class="cart-bottom">
-                    <ul class="action-options">
-                        <li>DELETE</li>
-                    </ul></div>
+
             </div>
+            <% } %>
 
-            <div class="cart-item">
-                <div class="cart-top">
-                    <div class="product-image"><img src="/images/shoe00.png" alt="product image"></div>
-                    <div class="product-details">
-                        <p class="product-item-1"> VANS</p>
-                        <p class="product-item-1">YACHT CLUB OLD SKOOL SHOES</p>
-                        <p class="product-item-1"> Color: Blue green</p>
-                        <p class="product-item-1"> Size: 8.5</p>
-                        <p class="product-item-1"> Width: D</p>
-                    </div>
-
-                    <div class="product-amount">
-                        <p>$ 133.00</p>
-                    </div>
-                    <div class="product-quantity">
-                        <p>2</p>
-                    </div>
-                    <div class="product-total">
-                        <p>$ 269</p>
-                    </div>
-
-                </div>
-                <div class="cart-bottom">
-                    <ul class="action-options">
-                        <li>DELETE</li>
-                    </ul></div>
-            </div>
 
         </div>
+
+
 
         <!-- card right -->
         <div class="cart-right">
@@ -175,8 +126,8 @@
 
             <div class="delivery-card">
                 <select class="ship-method">
-                    <option selected>Standard</option>
-                    <option>Express</option>
+                    <option class="option" selected>Standard</option>
+                    <option  class="option" >Express</option>
                 </select>
             </div>
 
@@ -192,6 +143,8 @@
         </div>
 
         </div>
+
+
     </div>
 
 </div>

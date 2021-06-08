@@ -28,6 +28,10 @@ nav {
     width: 100%;
     color: black !important;
     box-shadow: 0 .1rem .3rem rgba(0, 0, 0, .3);
+    /*position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;*/
 }
 
 .logo-container {
@@ -155,6 +159,10 @@ input::-webkit-search-cancel-button {
     width: 35px;
     height: 35px;
 }
+#icons img:hover {
+    cursor: pointer;
+}
+
 
 .checkbtn {
     font-size: 2.5rem;
@@ -235,10 +243,13 @@ img {
     border: 1px solid #878585;
     box-sizing: border-box;
     margin: 0.3rem;
+    opacity: 0.4;
 }
 
 .img-item:hover {
-    opacity: 0.8;
+    opacity: 1;
+    cursor: pointer;
+
 }
 
 
@@ -695,10 +706,16 @@ img {
     }
     #icons ul {
         right: 20px;
+
     }
+    #icons  ul li:hover {
+
+    }
+
     #icons img {
         width: 35px;
         height: 35px;
+
     }
     #icons input:focus {
         width: 130px;
@@ -712,7 +729,10 @@ img {
         left: -100%;
         text-align: center;
         transition: all .5s;
+        transition-delay: 0s;
         padding-left: 0px;
+        z-index: 2;
+        box-sizing: border-box;
     }
     .hover-underline-animation {
         display: block;
@@ -734,7 +754,9 @@ img {
     }
     #check:checked ~ .main-nav ul {
         left: 0;
+        overscroll-behavior: contain ;
     }
+
 }
 /* If the screen width is less than or equal 576px apply css defined in this block*/
 /*Ipad screen*/

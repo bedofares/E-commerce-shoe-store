@@ -26,23 +26,59 @@ function getProduct (req, res, next) {
 
 }
 
+/*function getCart(req,res,next){
+    res.render('cart')
+}*/
+
+function addToCart (req, res, next) {
+    productModel.addToCart((err, product) => {
+        if (err) {
+            //res.sendStatus(500) //this is just for error handling
+            res.status(404)
+            next(err)
+        }
+        //console.log("hey from controller");
+        if (product) {
+            res.redirect('/products')
+        }
+    }, req.body, req.params.id );
+
+}
+
+
+function getProductCart (req, res, next) {
+    productModel.getProductCart((err, product) => {
+        if (err) {
+            //res.sendStatus(500) //this is just for error handling
+            res.status(404)
+            //next(err)
+        }
+        //console.log(product)
+        res.render('cart' ,{product});
+    },req.params.id);
+
+}
 
 
 
-
-
-
-
-
-
-
-
-
+function deleteProduct(req, res, next) {
+    productModel.deleteProduct(
+        req.params.id
+        , (err, product) => {
+            if (err) {
+                return  res.sendStatus(500)
+            }
+            res.redirect('/cart');
+        })
+}
 
 
 
 
 module.exports = {
     getProducts,
-    getProduct
+    getProduct,
+    addToCart,
+    getProductCart,
+    deleteProduct
 }

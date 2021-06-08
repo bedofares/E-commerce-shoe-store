@@ -37,8 +37,8 @@
     <div id="icons">
         <ul>
             <input type="search" placeholder="Search">
-            <li><img src="/images/acc.png"></li>
-            <li><img src="/images/cart.png"></li>
+            <li ><img src="/images/acc.png"></li>
+            <li onclick="shoppingCart()" ><img src="/images/cart.png"></li>
         </ul>
     </div>
 
@@ -176,6 +176,11 @@
     </div>
 </footer>
 
+<script>
+    function shoppingCart(){
+        window.location.replace("/cart")
+    }
+</script>
 </body>
 </html>
 

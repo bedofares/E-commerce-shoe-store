@@ -1,12 +1,20 @@
 //import node module express
 const express = require('express')
 const router = express.Router()
+const productController = require('../controllers/productController');
+
 
 
 router.get('/',(req,res)=>{
     // Read cookies
     res.send('Hallo world');
+   // res.render('cart')
 })
+
+//router.get('/cart',productController.getCart)
+router.get('/cart',productController.getProductCart)
+
+
 
 router.get('/cookies',(req,res)=>{
     // Read cookies

@@ -9,7 +9,43 @@ function getProducts(cb){
 }
 
 function getProduct (cb,id) {
-    let sql = "SELECT * FROM products WHERE id= " + parseInt(id);//parse to change id from string to integer
+     let sql = "SELECT * FROM products INNER JOIN product_details ON products.id = product_details.id where products.id =" + parseInt(id) ;
+     //let sql = "SELECT * FROM product_details INNER JOIN products ON product_details.id= products.id ";
+    //console.log(sql)
+
+    db.query( sql, function (err, product, fields) {
+        if(err){
+
+            cb(err)
+        }
+       console.log(product)
+        cb(null,product)
+    });
+
+}
+
+function addToCart (cb,input, id) {
+    //console.log(input)
+    let sql = "INSERT INTO products_cart (product_size, product_width, product_color, product_quantity, product_id) VALUES ('"+input.product_sizee+"','"+input.product_widthh+"','"+input.product_colorr+"','"+input.product_quantityy+"', '" + id + "')";
+    //console.log(sql)
+
+    db.query( sql, function (err, product, fields) {
+        if(err){
+            cb(err, null)
+        }
+        cb(null, product)
+    });
+
+}
+
+function getProductCart (cb,id) {
+    //let sql = "SELECT * FROM products INNER JOIN products_cart ON products.id = products_cart.id where products.id =" + parseInt(id) ;
+    //let sql = "SELECT * FROM products INNER JOIN products_cart ON products.id = products_cart.id ";
+
+    //p. refer to product , c. refer to products
+    let sql = "SELECT p.*, c.* FROM products p, products_cart c WHERE p.id = c.product_id"
+    console.log(sql)
+
     db.query( sql, function (err, product, fields) {
         if(err){
 
@@ -21,14 +57,24 @@ function getProduct (cb,id) {
 
 }
 
+function deleteProduct(id, cb) {
+    let sql = "DELETE FROM products_cart WHERE id = " + id;
+    db.query(sql, function (err, result, fields) {
+        if (err) {
+            cb(err)
+        }
+        //console.log(result.affectedRows + " rows have been affected!");
+        cb(null, result);
+    })
 
-
-
-
+}
 
 
 //Export functions so we can use them in the controller
 module.exports = {
     getProducts,
-    getProduct
+    getProduct,
+    addToCart,
+    getProductCart,
+    deleteProduct
 }
