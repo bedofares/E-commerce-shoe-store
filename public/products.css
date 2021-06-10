@@ -20,13 +20,94 @@ body {
 /*Header section*/
 
 /* End of header */
+.ads{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    /*margin-top: 50px;*/
+    width: 95%;
+    height: 700px;
+    /*border: 1px solid black;*/
+    background-image: linear-gradient(0deg, rgba(56, 55, 55, 0.3), rgba(56, 55, 55, 0.3)), url("/images/xhero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-/* Utility stylings */
+}
+
+.ads-container{
+    width: 100%;
+    text-align: center;
+    color: white;
+
+}
+.ads-md-text{
+  text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.ads-lg-text{
+    font-size: 4rem;
+}
+.ads-button{
+    margin-top: 1rem;
+}
+.ads-button a{
+    text-decoration: none;
+    color: white!important;
+}
+.btn-ads {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .05rem;
+    border-radius: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: black;
+    color: white;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.btn-ads:hover{
+    background: #40c9a2;
+}
+
+.slide-circle-container{
+    position: absolute;
+    width: 95%;
+    text-align: center;
+    margin-top: 500px;
+
+}
+.slide-circle-container ul{
+}
+.slide-circle-container ul i{
+    margin-right: 5px;
+    color: white;
+    cursor: pointer;
+    opacity: 0.8;
+    padding: 0.2rem;
+}
+.slide-circle-container ul i:hover{
+    opacity:1;
+    font-size: 1.1rem;
+}
+
+
+    /* Utility stylings */
 img {
     width: 100%;
     display: block;
 }
 .container {
+   /* border: 1px solid black;*/
     width: 88vw;
     margin: 0 auto;
 }
@@ -66,6 +147,8 @@ img {
 .products {
     background: var(--alice-blue);
     padding: 3.2rem 0;
+    /*border: 1px solid black;*/
+    /*margin-top: 50px;*/
 }
 
 .products .text-light {
@@ -203,72 +286,8 @@ img {
     cursor: pointer;
 }
 
-/* product collection */
-/*.product-collection {
-    padding: 3.2rem 0;
-}
-
-.product-collection-wrapper {
-    padding: 3.2rem 0;
-}
-
-.product-col-left {
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url("images/fashion-img-1.jpg") center/cover no-repeat;
-}
-
-.product-col-r-top {
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url("images/fashion-img-2.png") center/cover no-repeat;
-}*/
-
-/*.flex {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 50vh;
-    padding: 2rem 1.5rem 3.2rem;
-    margin: 5px;
-}
-
-.product-col-r-bottom > div:first-child {
-    background: #eaa001;
-}
-
-.product-col-r-bottom > div:last-child {
-    background: #0090ff;
-}
-
-.product-col-content {
-    text-align: center;
-    color: white;
-}
-
-.product-collection .text-light {
-    opacity: 1;
-    font-size: 0.8;
-    font-weight: 400;
-    line-height: 1.7;
-}
-
-.btn-dark {
-    background: black;
-    color: white;
-    outline: 0;
-    border-radius: 25px;
-    padding: 0.7rem 1rem;
-    border: 0;
-    margin-top: 1rem;
-    cursor: pointer;
-    transition: all 0.6s ease;
-    font-size: 1rem;
-    font-family: inherit;
-}
-
-.btn-dark:hover {
-    background: var(--carribean-green);
-}
-*/
 /*FOOTER*/
-
+/*END FOOTER*/
 /* Media Queries */
 @media screen and (min-width: 992px) {
     .product-items {
@@ -313,6 +332,14 @@ img {
 
     .product-col-left {
         height: 121.5vh;
+    }
+}
+@media screen and (max-width: 576px) {
+    .ads{
+        height: 400px;
+        background-size: cover;
+        background-position: right;
+        background-repeat: no-repeat;
     }
 }
 

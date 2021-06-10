@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/product.css">
     <link rel="stylesheet" type="text/css" href="/products.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
     <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onload=" startTimer()">
 
 <!--HEADER START-->
+
 <nav>
     <input type="checkbox" id="check">
 
@@ -31,24 +33,42 @@
             <li class="hover-underline-animation"><a href="#">Men</a></li>
             <li class="hover-underline-animation"><a href="#">Women</a></li>
             <li class="hover-underline-animation"><a href="#">Kids</a></li>
-            <li class="hover-underline-animation"><a href="#">Sale</a></li>
+            <li class="hover-underline-animation"><a class="sale" href="#">Sale</a></li>
         </ul>
     </div>
     <div id="icons">
         <ul>
             <input type="search" placeholder="Search">
-            <li ><img src="/images/acc.png"></li>
-            <li onclick="shoppingCart()" ><img src="/images/cart.png"></li>
+            <li><img src="/images/acc.png"></li>
+            <li class="cart" onclick="shoppingCart()"><img src="/images/cart.png">
+                <% y = product.length %>
+                <span class="counter"><%= y %></span></li>
         </ul>
     </div>
 
 </nav>
 <!--END OF HEADER-->
+<!-- slider area -->
+<div class="ads">
+    <div class="ads-container">
+        <p class="ads-md-text">#New Summer collection</p>
+        <h1 class="ads-lg-text">Shoes Collection 2021</h1>
+        <p class="ads-button"><a class="scrollLink" href="#move"><button class="btn-ads"> SHOP NOW</button></a></p>
+    </div>
+    <div class="slide-circle-container">
+        <ul>
+            <i class="fa fa-circle " ></i>
+            <i class="fa fa-circle " ></i>
+            <i class="fa fa-circle " ></i>
+        </ul>
+    </div>
 
+
+</div>
 <!--PRODUCT-->
 <div class="products">
     <div class="container">
-        <h1 class="lg-title">Special Shoes With Offers</h1>
+        <h1 id="move" class="lg-title">Special Shoes With Offers</h1>
         <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quos sit consectetur,
             ipsa voluptatem vitae necessitatibus dicta veniam, optio, possimus assumenda laudantium. Temporibus, quis
             cum.</p>
@@ -60,8 +80,8 @@
                 <div class="product">
                     <div class="product-content">
                         <div class="product-img">
-                            <a href="/products/<%= products[i].id %>" >
-                            <img src="<%= products[i].product_image %>" alt="product image">
+                            <a href="/products/<%= products[i].id %>">
+                                <img src="<%= products[i].product_image %>" alt="product image">
                             </a>
                         </div>
                         <div class="product-btns">
@@ -86,8 +106,9 @@
                             </div>
                         </div>
 
-                        <a href="/products/<%= products[i].id %>" class="product-name"><%= products[i].product_model %></a>
-                        <p class="product-price-1">$<%= products[i].product_old_price%></p>
+                        <a href="/products/<%= products[i].id %>"
+                           class="product-name"><%= products[i].product_model %></a>
+                        <p class="product-price-1">$<%= products[i].product_old_price %></p>
                         <p class="product-price-1">$ <%= products[i].product_price %></p>
                     </div>
 
@@ -99,7 +120,6 @@
         </div>
     </div>
 </div>
-
 
 
 <!-- Footer-->
@@ -177,9 +197,40 @@
 </footer>
 
 <script>
-    function shoppingCart(){
+    function shoppingCart() {
         window.location.replace("/cart")
     }
+
+    $(document).ready(function() {
+        $("a.scrollLink").click(function(event) {
+            event.preventDefault();
+            $("html, body").animate({
+                scrollTop: $($(this).attr("href")).offset().top
+            }, 500);
+        });
+    });
+
+    var images = ['/images/xhero.jpg',
+        '/images/lolo.jpg',
+        '/images/ximg.jpg',
+    ];
+
+    var img = document.querySelector(".ads");
+
+    function displayImage(x) {
+        img.style.backgroundImage = "linear-gradient(0deg, rgba(56, 55, 55, 0.3), rgba(56, 55, 55, 0.3)),url(" + images[x] + ")";
+        /*img.innerText = images[x];*/
+    }
+    function startTimer() {
+        var x = 0;
+        displayImage(x);
+        setInterval(function() {
+            x = x + 1 >= images.length ? 0 : x + 1;
+            displayImage(x);
+        }, 6000);
+    }
+
+
 </script>
 </body>
 </html>

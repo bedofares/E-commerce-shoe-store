@@ -29,7 +29,7 @@
             <li class="hover-underline-animation"><a href="#">Men</a></li>
             <li class="hover-underline-animation"><a href="#">Women</a></li>
             <li class="hover-underline-animation"><a href="#">Kids</a></li>
-            <li class="hover-underline-animation"><a href="#">Sale</a></li>
+            <li class="hover-underline-animation"><a class="sale" href="#">Sale</a></li>
         </ul>
     </div>
    <!-- <div class="u-black u-menu-overlay u-opacity u-opacity-70" style="display: block;"></div>-->
@@ -37,7 +37,7 @@
         <ul>
             <input type="search" placeholder="Search">
             <li ><img src="/images/acc.png"></li>
-            <li onclick="shoppingCart()"><img src="/images/cart.png"></li>
+            <li class="cart" onclick="shoppingCart()"><img src="/images/cart.png"></li>
         </ul>
     </div>
 
@@ -61,7 +61,7 @@
                 </div>
                 <div class="img-select">
                     <div class="img-item">
-                            <img class="thumbnail active"src="<%= product[i].product_image_1 %>" alt="shoe image">
+                            <img  class="thumbnail active"src="<%= product[i].product_image_1 %>" alt="shoe image">
                     </div>
                     <div class="img-item">
                             <img class="thumbnail" src="<%= product[i].product_image_2 %>" alt="shoe image">
@@ -76,7 +76,7 @@
             </div>
 
 
-            <form method="post" action="/products/<%= product[i].id %>" onsubmit="" >
+            <form method="post" action="/products/<%= product[i].id %>" onsubmit="">
             <!-- card right -->
             <div class="product-content">
                 <h2 class="product-title"><%= product[i].product_brand %></h2>
@@ -100,21 +100,21 @@
                     <ul class="select-options">
                         <li>
                             <label for="size">Size</label>
-                            <select name="product_sizee"  class="custom-select" id="size" >
-                                <option disabled selected >Choose Options</option>
-                                <option><%= product[i].product_size_1 %></option>
-                                <option><%= product[i].product_size_2 %></option>
-                                <option><%= product[i].product_size_3 %></option>
+                            <select  required name="product_sizee"  class="custom-select" id="size" >
+                                <option disabled selected value="" >Choose Options</option>
+                                <option value="<%= product[i].product_size_1 %>"><%= product[i].product_size_1 %></option>
+                                <option value="<%= product[i].product_size_2 %>"><%= product[i].product_size_2 %></option>
+                                <option value="<%= product[i].product_size_3 %>"><%= product[i].product_size_3 %></option>
                             </select>
                         </li>
 
                         <li>
                             <label for="color">Colour</label>
-                            <select name="product_colorr" class="custom-select" id="color" >
-                                <option disabled selected>Choose Options</option>
-                                <option><%= product[i].product_color_1 %></option>
-                                <option><%= product[i].product_color_2 %></option>
-                                <option><%= product[i].product_color_3 %></option>
+                            <select required  name="product_colorr" class="custom-select" id="color" >
+                                <option disabled selected value="">Choose Options</option>
+                                <option value="<%= product[i].product_color_1 %>"><%= product[i].product_color_1 %></option>
+                                <option value="<%= product[i].product_color_2 %>"><%= product[i].product_color_2 %></option>
+                                <option value="<%= product[i].product_color_3 %>"><%= product[i].product_color_3 %></option>
 
                             </select>
                         </li>
@@ -123,11 +123,11 @@
                     <ul class="select-option-2">
                         <li>
                             <label for="width">Width</label>
-                            <select name="product_widthh"   class="custom-select" id="width" >
-                                <option disabled selected >Choose Options</option>
-                                <option><%= product[i].product_width_1 %></option>
-                                <option><%= product[i].product_width_2 %></option>
-                                <option><%= product[i].product_width_3%></option>
+                            <select required name="product_widthh"  class="custom-select" id="width" >
+                                <option disabled selected value="" >Choose Options</option>
+                                <option value="<%= product[i].product_width_1 %>"><%= product[i].product_width_1 %></option>
+                                <option value="<%= product[i].product_width_2 %>"><%= product[i].product_width_2 %></option>
+                                <option value="<%= product[i].product_width_3%>"><%= product[i].product_width_3%></option>
                             </select>
                         </li>
 
@@ -138,7 +138,7 @@
 
                 <div class="purchase-info">
                     <label for="quantity">Quantity</label>
-                    <input name="product_quantityy" type="number" min="0" placeholder="0" >
+                    <input required name="product_quantityy" type="number" min="0" placeholder="0" >
                     <button type="submit" class="btn">
                         Add to Cart <i class="fas fa-shopping-cart"></i>
                     </button>
@@ -236,6 +236,7 @@
     function shoppingCart(){
         window.location.replace("/cart")
     }
+
     let thumbnails = document.getElementsByClassName('thumbnail')
 
     let activeImages = document.getElementsByClassName('active')
@@ -248,7 +249,6 @@
             if (activeImages.length > 0){
                 activeImages[0].classList.remove('active')
             }
-
 
             this.classList.add('active')
             document.getElementById('featured').src = this.src

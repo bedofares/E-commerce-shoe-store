@@ -30,14 +30,16 @@
             <li class="hover-underline-animation"><a href="#">Men</a></li>
             <li class="hover-underline-animation"><a href="#">Women</a></li>
             <li class="hover-underline-animation"><a href="#">Kids</a></li>
-            <li class="hover-underline-animation"><a href="#">Sale</a></li>
+            <li class="hover-underline-animation"><a class="sale" href="#">Sale</a></li>
         </ul>
     </div>
     <div id="icons">
         <ul>
             <input type="search" placeholder="Search">
             <li><img src="/images/acc.png"></li>
-            <li><img src="/images/cart.png"></li>
+            <li class="cart" onclick="shoppingCart()" ><img src="/images/cart.png">
+                <% i= product.length %>
+                <span class="counter"><%= i%></span></li>
         </ul>
     </div>
 
@@ -54,7 +56,8 @@
         <div class="details-left">
             <div class="cart-item-head">
                 <div class="cart-top-head">
-                    <div class="product-head"> 1 ITEM</div>
+                    <div class="product-head"> <%=i%> ITEM</div>
+
                     <div class="product-details">
                     </div>
                     <div class="product-amount-head">
@@ -69,8 +72,10 @@
 
                 </div>
             </div>
-            <% for (let i = 0; i < product.length; i++) { %>
-
+            <% let y = 0 ;%>
+            <%for (let i = 0; i < product.length; i++) { %>
+            <% let x =  product[i].product_price * product[i].product_quantity;
+               y+=x %>
             <div class="cart-item">
                 <div class="cart-top">
                 <div class="product-image"><img src="<%= product[i].product_image %>" alt="product image"></div>
@@ -89,7 +94,7 @@
                     <p><%= product[i].product_quantity %></p>
                 </div>
                 <div class="product-total">
-                    <p>$ <%= product[i].product_price * product[i].product_quantity  %>  </p>
+                    <p>$<%= x %></p>
                 </div>
 
                 </div>
@@ -132,12 +137,13 @@
             </div>
 
             <div class="estimated-total-card">
-                <p><span class="md-text">Subtotal</span> <span class="sm-text">$226.00</span></p>
+                <p><span class="md-text">Subtotal</span> <span class="sm-text">$<%=y%></span></p>
                 <p><span class="md-text">Shipping</span> <span class="sm-text">$7.99</span></p>
                 <p><span class="md-text">Shipping Discount </span><span class="sm-text"> - $7.99</span></p>
-                <p class="estimated-total-child"><span class="lg-text">ESTIMATED TOTAL   </span><span class="sm-text-1"> $226.00</span>
+                <p class="estimated-total-child"><span class="lg-text">ESTIMATED TOTAL   </span><span class="sm-text-1">$<%=y%></span>
                 </p>
                <p><button class="check-out">CHECK OUT</button></p>
+
             </div>
 
         </div>

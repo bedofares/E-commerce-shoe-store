@@ -8,6 +8,7 @@ function getProducts(cb){
     });
 }
 
+
 function getProduct (cb,id) {
      let sql = "SELECT * FROM products INNER JOIN product_details ON products.id = product_details.id where products.id =" + parseInt(id) ;
      //let sql = "SELECT * FROM product_details INNER JOIN products ON product_details.id= products.id ";

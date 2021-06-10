@@ -9,10 +9,17 @@ function getProducts (req, res, next) {
             if (err) {
                 res.sendStatus(500) //this is just for error handling
             }
-            res.render('products', {products});
-        });
+        productModel.getProductCart((err, product) => {
+            if (err) {
+                //res.sendStatus(500) //this is just for error handling
+                res.status(404)
+                //next(err)
+            }
+            res.render('products', {products : products , product: product});
+        },req.params.id);
 
-}
+})}
+
 
 function getProduct (req, res, next) {
     productModel.getProduct((err, product) => {
@@ -36,6 +43,7 @@ function addToCart (req, res, next) {
             //res.sendStatus(500) //this is just for error handling
             res.status(404)
             next(err)
+
         }
         //console.log("hey from controller");
         if (product) {
