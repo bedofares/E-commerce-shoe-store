@@ -1,8 +1,5 @@
 const productModel = require("../models/productModel")
 
-
-
-
 //menu controller takes the request, response and next object
 function getProducts (req, res, next) {
     productModel.getProducts((err, products) => {
@@ -28,14 +25,18 @@ function getProduct (req, res, next) {
             res.status(404)
             next(err)
         }
-        res.render('product' , {product});
+        productModel.getProductCart((err, products) => {
+            if (err) {
+                //res.sendStatus(500) //this is just for error handling
+                res.status(404)
+                //next(err)
+            }
+        res.render('product' , {product:product , products:products});
     },req.params.id);
 
-}
+    },req.params.id)}
 
-/*function getCart(req,res,next){
-    res.render('cart')
-}*/
+
 
 function addToCart (req, res, next) {
     productModel.addToCart((err, product) => {
@@ -45,9 +46,8 @@ function addToCart (req, res, next) {
             next(err)
 
         }
-        //console.log("hey from controller");
         if (product) {
-            res.redirect('/products')
+            res.redirect('/')
         }
     }, req.body, req.params.id );
 

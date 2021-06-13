@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
+    <title>Shopping</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/product.css">
     <link rel="stylesheet" type="text/css" href="/cart.css">
@@ -42,23 +42,22 @@
                 <span class="counter"><%= i%></span></li>
         </ul>
     </div>
-
 </nav>
 <!--END OF HEADER-->
 <div class="current-page-1">
     <p class="shop-cart">Shopping Cart</p>
 </div>
 
+<!--START OF CART ITEMS CONTAINER-->
 <div class="card-wrapper-1">
     <div class="card-1">
-
         <!-- card left -->
         <div class="details-left">
             <div class="cart-item-head">
                 <div class="cart-top-head">
                     <div class="product-head"> <%=i%> ITEM</div>
 
-                    <div class="product-details">
+                    <div class="product-details-1">
                     </div>
                     <div class="product-amount-head">
                         <p>Price</p>
@@ -72,7 +71,9 @@
 
                 </div>
             </div>
+
             <% let y = 0 ;%>
+            <!--MAIN LOOP-->
             <%for (let i = 0; i < product.length; i++) { %>
             <% let x =  product[i].product_price * product[i].product_quantity;
                y+=x %>
@@ -86,7 +87,6 @@
                     <p class="product-item-1"> Size: <%= product[i].product_size %></p>
                     <p class="product-item-1"> Width: <%= product[i].product_width %></p>
                 </div>
-
                 <div class="product-amount">
                     <p>$ <%= product[i].product_price %></p>
                 </div>
@@ -96,7 +96,6 @@
                 <div class="product-total">
                     <p>$<%= x %></p>
                 </div>
-
                 </div>
                 <div class="cart-bottom">
                     <form method="post" action="/products/<%= product[i].id %>/delete">
@@ -108,10 +107,7 @@
 
             </div>
             <% } %>
-
-
         </div>
-
 
 
         <!-- card right -->
@@ -128,14 +124,12 @@
                     Free Shipping over $125</p>
                 <p class="returns"><i class="fa fa-undo" aria-hidden="true"></i>100 days free returns</p>
             </div>
-
             <div class="delivery-card">
                 <select class="ship-method">
                     <option class="option" selected>Standard</option>
                     <option  class="option" >Express</option>
                 </select>
             </div>
-
             <div class="estimated-total-card">
                 <p><span class="md-text">Subtotal</span> <span class="sm-text">$<%=y%></span></p>
                 <p><span class="md-text">Shipping</span> <span class="sm-text">$7.99</span></p>
@@ -143,16 +137,10 @@
                 <p class="estimated-total-child"><span class="lg-text">ESTIMATED TOTAL   </span><span class="sm-text-1">$<%=y%></span>
                 </p>
                <p><button class="check-out">CHECK OUT</button></p>
-
             </div>
-
         </div>
-
         </div>
-
-
     </div>
-
 </div>
 
 
@@ -168,7 +156,6 @@
                 <li>10% Student Discount</li>
             </ul>
         </div>
-
         <div class="col-2">
             <h3>Quick links</h3>
             <ul class="col-2-list">
@@ -178,7 +165,6 @@
                 <li>Contact Us</li>
             </ul>
         </div>
-
         <div class="col-3">
             <h3>Categories</h3>
             <ul class="col-2-list">
@@ -192,7 +178,7 @@
             <h3>The good stuff in your inbox</h3>
             <p>News & updates from bedo Store. <br>No spam , we promise.</p>
             <div class="newsletter">
-                <input class="email" type="text">
+                <input class="email" type="text"  placeholder="example@example.com">
                 <input class="SUBSCRIBE" type="submit" value="SUBSCRIBE">
             </div>
             <div class="social-links">
@@ -208,7 +194,6 @@
                 <a href="">
                     <i class="fab fa-pinterest"></i>
                 </a>
-
             </div>
         </div>
     </div>
@@ -229,7 +214,7 @@
 </footer>
 <script type="text/javascript">
     function returnHome(){
-        window.location.replace("/products")
+        window.location.replace("/")
     }
 </script>
 </body>

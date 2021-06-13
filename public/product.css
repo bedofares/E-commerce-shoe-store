@@ -19,7 +19,6 @@ body {
 }
 
 /*Header section*/
-
 nav {
     display: flex;
     flex-direction: row;
@@ -28,11 +27,6 @@ nav {
     width: 100%;
     color: black !important;
     box-shadow: 0 .1rem .3rem rgba(0, 0, 0, .3);
-   /* margin-bottom: 10px;*/
-    /*position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 1;*/
 }
 
 .logo-container {
@@ -96,8 +90,8 @@ h2.logo {
     text-decoration: none;
 }
 
-.sale{
-    color: red!important;
+.sale {
+    color: red !important;
 }
 
 /*SEARCH BAR*/
@@ -116,16 +110,17 @@ h2.logo {
     flex-direction: row;
     justify-content: center;
 }
-.cart{
+
+.cart {
     display: flex;
     flex-direction: row;
-   /* border: 1px solid black;*/
-   width: 45px;
+    width: 45px;
 }
-.cart img{
-    /*border: 1px solid black;*/
+
+.cart img {
 }
-.counter{
+
+.counter {
     position: absolute;
     display: flex;
     align-items: center;
@@ -135,13 +130,11 @@ h2.logo {
     background: black;
     color: white;
     font-size: 12px;
-   /* border: 1px solid black;*/
     padding: 0.5rem;
     border-radius: 50px;
     right: 0;
 }
-
-/*SEARCH BAR*/
+/*SEARCH BAR END*/
 
 input::-webkit-search-cancel-button {
     display: none;
@@ -150,7 +143,6 @@ input::-webkit-search-cancel-button {
 #icons input {
     outline: none;
     margin-right: 5px;
-    /* margin-left: 110px;*/
     -webkit-appearance: textfield;
     -webkit-box-sizing: content-box;
     font-family: inherit;
@@ -166,7 +158,6 @@ input::-webkit-search-cancel-button {
     -moz-transition: all .5s;
     transition: all .5s;
 }
-
 #icons input:focus {
     width: 130px;
     background-color: #fff;
@@ -175,15 +166,12 @@ input::-webkit-search-cancel-button {
     -moz-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
     box-shadow: 0 0 5px rgba(109, 207, 246, .5);
 }
-
 #icons input:-moz-placeholder {
     color: #999;
 }
-
 #icons input ::-webkit-input-placeholder {
     color: #999;
 }
-
 #icons img {
     width: 35px;
     height: 35px;
@@ -191,8 +179,6 @@ input::-webkit-search-cancel-button {
 #icons img:hover {
     cursor: pointer;
 }
-
-
 .checkbtn {
     font-size: 2.5rem;
     color: black !important;
@@ -202,12 +188,13 @@ input::-webkit-search-cancel-button {
     padding-right: 1rem;
     padding-left: 1rem;
 }
-
 #check {
     display: none;
 }
 
 /* End of header */
+
+/*current page*/
 .current-page {
     max-width: 1100px;
     margin: 0 auto;
@@ -218,7 +205,6 @@ input::-webkit-search-cancel-button {
     font-size: 1rem;
     width: 250px;
 }
-
 .men-shoes {
     font-weight: 600;
     font-size: 1.4rem;
@@ -226,26 +212,23 @@ input::-webkit-search-cancel-button {
     margin-top: 0.5rem;
 }
 
+
 /*Start of products --card*/
 .card {
     margin-top: 30px;
 }
-
 .card-wrapper {
     max-width: 1100px;
     margin: 0 auto;
 }
-
 img {
     width: 100%;
     display: block;
 }
-
 .product-imgs {
     display: flex;
     flex-direction: column;
 }
-
 .img-showcase {
     display: flex;
     justify-content: center;
@@ -255,38 +238,29 @@ img {
     background: #EDEDED;
     height: 500px;
 }
-
 .img-showcase img {
     width: 60%;
     height: 320px;
 }
-
-
 .img-select {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     padding: 0.1rem;
 }
-
 .img-item {
     border: 1px solid #878585;
     box-sizing: border-box;
     margin: 0.3rem;
     opacity: 0.4;
 }
-
 .img-item:hover {
     opacity: 1;
     cursor: pointer;
-
 }
-
-
 .product-content {
     padding: 2rem 1rem;
     color: #000000;
 }
-
 .product-title {
     font-size: 1rem;
     text-transform: uppercase;
@@ -297,7 +271,6 @@ img {
     margin-bottom: 0.4rem;
     width: 200px;
 }
-
 .product-model {
     text-decoration: none;
     text-transform: uppercase;
@@ -310,56 +283,40 @@ img {
     transition: all 0.5s ease;
     width: 100%;
 }
-
-
 .product-rating {
     color: #ffc107;
 }
-
 .product-rating span {
     font-weight: 600;
     color: var(--carribean-green);
 }
-
 .product-price {
     margin: 1rem 0;
     font-size: 1rem;
     font-weight: 700;
 }
-
 .product-price span {
     font-weight: 400;
 }
-
 .last-price span {
     color: #f64749;
     text-decoration: line-through;
 }
-
 .new-price {
     margin-top: 0.3rem;
 }
-
 .new-price span {
     color: #000000;
     margin-top: 0.6rem;
 }
-
 .product-detail {
     border-top: 3px solid #E3E3E3;
 }
-
-.about-item h2{
+.about-item h2 {
     text-transform: uppercase;
     color: #000000;
     padding-bottom: 0.6rem;
 }
-/*.about-item p{
-    font-size: 0.9rem;
-    padding: 0.3rem;
-    opacity: 0.8;
-}*/
-
 .select-options {
     display: flex;
     flex-direction: row;
@@ -378,7 +335,6 @@ img {
     border-radius: 2px solid black;
     margin-top: 0.2rem;
 }
-
 .product-detail ul li {
     list-style: none;
     background-size: 18px;
@@ -388,29 +344,22 @@ img {
     font-weight: 600;
     opacity: 0.9;
 }
-
 .select-options label {
     display: block;
 }
-
 .select-option-2 {
-
     margin-left: 0.3rem;
 }
-
 .select-option-2 label {
     display: block;
 }
-
 .product-detail ul li span {
     font-weight: 400;
 }
-
 .purchase-info {
     margin: 0.9rem 0;
     margin-left: 0.3rem;
 }
-
 .purchase-info input,
 .purchase-info .btn {
     border: 1.5px solid #ddd;
@@ -419,7 +368,6 @@ img {
     outline: 0;
     margin-bottom: 1rem;
 }
-
 .purchase-info input {
     display: block;
     width: 60px;
@@ -427,30 +375,23 @@ img {
     margin-top: 0.2rem;
     margin-left: 0;
 }
-
 .purchase-info label {
     font-weight: 600;
 }
-
 .purchase-info .btn {
     cursor: pointer;
     color: #fff;
     margin-top: 1rem;
 }
-
 .purchase-info .btn:first-of-type {
     background: #256eff;
 }
-
 .purchase-info .btn:last-of-type {
     background: black;
 }
-
 .purchase-info .btn:hover {
     background: #40C9A2FF;
 }
-
-
 /*FOOTER*/
 .footer {
     display: flex;
@@ -469,13 +410,6 @@ img {
     display: grid;
     grid-template-columns: repeat(4, 22% 22% 22% 34%);
 }
-
-/*.col-1,
-.col-2,
-.col-3,
-.col-4 {
-    /*border: 1px solid red;
-}*/
 .col-1 h3,
 .col-2 h3,
 .col-3 h3 {
@@ -499,9 +433,6 @@ img {
 .col-2 h3 {
     margin-left: 20%;
 }
-.col-3 h3 {
-    /*width: 80px;*/
-}
 .col-4 h3 {
     font-size: 1.3rem;
     margin-bottom: 10px;
@@ -514,53 +445,47 @@ img {
     margin-bottom: 1.4rem;
 }
 .newsletter {
+    display: flex;
     padding: 0.5rem;
+    padding-left: 0;
     width: 100%;
 }
-
 .col-4 .email {
     display: inline;
     outline: none;
     background: none;
-    border: none;
-    width: 70%;
+    width: 60%;
     color: white;
     font-size: 1rem;
-    border-bottom: 2px solid #3FC9A2;
-    margin-top: 5px;
-    margin-left: 10%;
+    border: 2px solid #7F7E7F;
+    height: 40px;
     margin-right: 0;
+    margin-left: 10%;
     padding-left: 0.5rem;
-
 }
-
 .SUBSCRIBE {
-    display: block;
     outline: none;
     background: none;
     color: white;
     border: none;
-    font-size: 1rem;
-    background: #3FC9A2;
+    font-size: 0.8rem;
+    background: #7F7E7F;
     padding: 0.5rem;
-    border-radius: 20px;
-    margin: 0 auto;
-    margin-top:0.8rem ;
+    height: 40px;
+    margin-top: 0;
+    margin-left: 0;
 }
-
 .SUBSCRIBE:hover {
     color: black;
     background: white;
     cursor: pointer;
 }
-
 .social-links {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
 }
-
 .social-links a {
     display: flex;
     align-items: center;
@@ -575,12 +500,10 @@ img {
     font-size: 1.2rem;
     transition: all 0.5s ease;
 }
-
 .social-links a:hover {
     background: #3FC9A2;
     border-color: transparent;
 }
-
 .col-1 ul,
 .col-2 ul,
 .col-3 ul,
@@ -590,8 +513,6 @@ img {
     list-style: none;
     margin-top: 25px;
 }
-
-
 .col-1 ul li,
 .col-2 ul li,
 .col-3 ul li,
@@ -608,16 +529,12 @@ img {
     color: #3FC9A2;
     cursor: pointer;
 }
-
 .col-1 ul li {
     margin-left: 20%;
 }
-
 .col-2 ul li {
     margin-left: 20%;
 }
-
-
 .footer_section_2 {
     display: flex;
     flex-direction: row;
@@ -628,13 +545,10 @@ img {
     margin-top: 50px;
     padding-top: 15px;
 }
-
 .copy-right {
-   /* flex-grow: 1;*/
     width: 60%;
     justify-content: space-between;
 }
-
 .copy-right p {
     color: #7B7B7B;
     font-style: normal;
@@ -643,11 +557,9 @@ img {
     font-size: 1.1rem;
     padding-top: 8px;
 }
-
 .payment-icon {
     width: 60%;
 }
-
 .payment-icon div {
     display: flex;
     flex-direction: row;
@@ -656,7 +568,6 @@ img {
     margin-right: 40px;
     width: 60%;
 }
-
 .payment-icon img {
     width: 50px;
     height: 50px;
@@ -668,26 +579,22 @@ img {
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 1.5rem;
     }
-
     .card-wrapper {
         display: flex;
     }
-
     .product-imgs {
         display: flex;
         flex-direction: column;
     }
-
     .product-content {
         padding-top: 0;
     }
-
 }
-
 @media screen and (max-width: 1200px) {
     .card-wrapper {
         width: 90%;
     }
+
     .current-page {
         width: 90%;
     }
@@ -709,7 +616,7 @@ img {
         width: 60% !important;
     }
     #icons ul {
-        padding-left: 0px;
+        padding-left: 0;
     }
 
     #icons input:focus {
@@ -718,11 +625,11 @@ img {
 }
 
 
-@media screen and (max-width: 992px){
+@media screen and (max-width: 992px) {
     .checkbtn {
         display: block;
         font-size: 2rem;
-        margin-top: 0rem;
+        margin-top: 0;
     }
     h2.logo {
         color: black !important;
@@ -742,21 +649,15 @@ img {
     }
     #icons ul {
         right: 20px;
-
     }
-    #icons  ul li:hover {
-
-    }
-
     #icons img {
         width: 35px;
         height: 35px;
-
     }
     #icons input:focus {
         width: 130px;
     }
-    nav{
+    nav {
         position: sticky;
         position: -webkit-sticky;
         top: 0;
@@ -772,12 +673,14 @@ img {
         text-align: center;
         transition: all .5s;
         transition-delay: 0s;
-        padding-left: 0px;
+        padding-left: 0;
         z-index: 2;
         box-sizing: border-box;
+        overflow: auto;
     }
     .hover-underline-animation {
         display: block;
+        width: 100%;
         margin: 50px 0;
         line-height: 30px;
         border-bottom: 2px solid #e7e7e7;
@@ -790,14 +693,12 @@ img {
     .hover-underline-animation:after {
         display: none;
     }
-
     .hover-underline-animation:hover:after {
         display: none;
     }
     #check:checked ~ .main-nav ul {
         left: 0;
     }
-
 }
 
 
@@ -820,13 +721,6 @@ img {
     .col-4 p {
         font-size: 1.1rem;
     }
-    .col-4 .email {
-        width: 80%;
-    }
-    .SUBSCRIBE {
-        font-size: 0.8rem;
-        margin-left: 10%;
-    }
     .social-links a {
         width: 30px;
         height: 30px;
@@ -835,7 +729,7 @@ img {
     .footer_section_1 {
         grid-template-columns: repeat(3, 1fr);
     }
-    .col-1, .col-2, .col-3{
+    .col-1, .col-2, .col-3 {
         text-align: center;
         margin-top: 1rem;
     }
@@ -869,25 +763,27 @@ img {
         margin: 0 auto;
         width: 50%;
     }
-    .col-4 h3{
-        /*font-size: 1.8rem;*/
-    }
     .col-4 p {
         margin: 0 auto;
         margin-top: 0.5rem;
     }
-    .col-4 .email {
-        width: 40%;
+    .newsletter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .newsletter .email {
         margin-left: 0;
+        width: 40%;
     }
     .footer_section_2 {
         flex-direction: column;
         text-align: center;
     }
-    .copy-right  {
-      width: 100%;
+    .copy-right {
+        width: 100%;
     }
-    .payment-icon{
+    .payment-icon {
         width: 100%;
     }
     .payment-icon div {
@@ -898,25 +794,7 @@ img {
         margin-bottom: 0.5rem;
         font-size: 1rem;
     }
-    .SUBSCRIBE {
-        display: block;
-        margin: 0 auto;
-        background: #3FC9A2;
-        color: white;
-        border: none;
-        font-size: 0.8rem;
-        padding: 0.5rem;
-        border-radius: 20px;
-        margin-top: 1rem;
-    }
-    .SUBSCRIBE:hover {
-        color: black;
-        background: white;
-        cursor: pointer;
-    }
-
 }
-
 /* If the screen width is less than or equal 576px apply css defined in this block*/
 /*Mobile screen*/
 @media screen and (max-width: 576px) {
@@ -941,6 +819,12 @@ img {
     #icons img {
         width: 28px;
         height: 28px;
+    }
+    .counter {
+        width: 16px;
+        height: 16px;
+        padding: 0.3rem;
+        margin-right: 6px;
     }
     .select-options {
         display: block;
@@ -984,20 +868,17 @@ img {
         flex-direction: column;
         text-align: center;
     }
-
     .copy-right p {
         width: 80%;
     }
-    .SUBSCRIBE {
-        font-size: 0.8rem;
-        margin-top: 1rem;
+    .newsletter .email {
+        width: 55%;
     }
-    .SUBSCRIBE:hover {
-        color: black;
-        background: white;
-        cursor: pointer;
+}
+@media screen and (max-width: 376px) {
+    #icons ul {
+        right: 5px;
     }
-
 }
 
 

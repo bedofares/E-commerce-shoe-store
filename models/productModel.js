@@ -26,10 +26,8 @@ function getProduct (cb,id) {
 }
 
 function addToCart (cb,input, id) {
-    //console.log(input)
     let sql = "INSERT INTO products_cart (product_size, product_width, product_color, product_quantity, product_id) VALUES ('"+input.product_sizee+"','"+input.product_widthh+"','"+input.product_colorr+"','"+input.product_quantityy+"', '" + id + "')";
     //console.log(sql)
-
     db.query( sql, function (err, product, fields) {
         if(err){
             cb(err, null)
@@ -40,19 +38,16 @@ function addToCart (cb,input, id) {
 }
 
 function getProductCart (cb,id) {
-    //let sql = "SELECT * FROM products INNER JOIN products_cart ON products.id = products_cart.id where products.id =" + parseInt(id) ;
-    //let sql = "SELECT * FROM products INNER JOIN products_cart ON products.id = products_cart.id ";
-
-    //p. refer to product , c. refer to products
+    //p. refer to product , c. refer to productsCart
     let sql = "SELECT p.*, c.* FROM products p, products_cart c WHERE p.id = c.product_id"
-    console.log(sql)
+    //console.log(sql)
 
     db.query( sql, function (err, product, fields) {
         if(err){
 
             cb(err)
         }
-        console.log(product)
+        //console.log(product)
         cb(null,product)
     });
 
@@ -64,7 +59,6 @@ function deleteProduct(id, cb) {
         if (err) {
             cb(err)
         }
-        //console.log(result.affectedRows + " rows have been affected!");
         cb(null, result);
     })
 

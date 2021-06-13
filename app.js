@@ -4,21 +4,18 @@ const app = express()
 const port = 3000
 //require middleware
 const bodyParser = require('body-parser')
-const cookieParser = require('cookie-parser')
-const cors = require('cors')
-const fileUpload = require('express-fileupload');
 const path = require('path')
 const ejs = require('ejs')
 const db = require('./services/database.js');
+
+
 
 //path of the view
 app.set('views', path.join(__dirname, 'views'))
 //type of view
 app.set('view engine', 'ejs');
 
-app.use(cookieParser())
-app.use(cors())
-app.use(fileUpload({createParentPath: true}))
+
 
 
 app.use(bodyParser.json())
