@@ -685,6 +685,7 @@ img {
         line-height: 30px;
         border-bottom: 2px solid #e7e7e7;
     }
+
     .main-nav .hover-underline-animation a {
         font-size: 1.5rem;
         color: black;
@@ -726,6 +727,14 @@ img {
         height: 30px;
         font-size: 1rem;
     }
+
+    .hover-underline-animation {
+        line-height: 30px;
+    }
+    .main-nav .hover-underline-animation a {
+        font-size: 1.3rem;
+    }
+
     .footer_section_1 {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -828,6 +837,13 @@ img {
     }
     .select-options {
         display: block;
+    }
+    .hover-underline-animation {
+        line-height: 30px;
+        margin: 10px 0;
+    }
+    .main-nav .hover-underline-animation a {
+        font-size: 1rem;
     }
     .footer_section_1 {
         grid-template-columns: repeat(1, 1fr);
