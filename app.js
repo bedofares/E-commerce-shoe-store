@@ -23,6 +23,8 @@ app.use(bodyParser.urlencoded({extended:true}))
 
 //Telling the express module that the public  directory has all of our site assets
 //serve static files from /public
+// Define the static file path
+//app.use(express.static('public'));
 app.use(express.static(__dirname + '/public'));
 
 
