@@ -1,3 +1,2 @@
-# Creative code lap 2 
-
-Creative Code Lap2 final project (Online webshop)
+# E-commerce-shoe-store
+Online webshop that is selling all kind of shoe for all genders and ages. Here you can find shoes from known brands with reasonable prices.
